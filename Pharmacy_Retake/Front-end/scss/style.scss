@@ -1,0 +1,217 @@
+/* import Font Awesome and Google font(s) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+/* import the necessary Bootstrap files */
+@import "../node_modules/bootstrap/scss/functions";
+
+/* override Bootstrap variables (before importing Bootstrap!!!) */
+@import 'projectVariables';
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+/* Optional Sass map overrides here (just before the Bootstrap maps!!) */
+@import 'projectMaps';
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/root";
+@import 'projectUtilities';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+/* create custom styles/partials */
+@import 'custom';
+.navbar {
+  background-color: #004d00; // Arka plan rengini değiştir
+  color: #ffffff; // Metin rengini değiştir
+
+  .navbar-brand, .nav-link {
+    color: #ffffff; // Marka ve bağlantı metin rengini değiştir
+
+    &:hover {
+      color: #dddddd; // Marka ve bağlantı hover metin rengini değiştir
+    }
+  }
+}
+
+.nav-item{
+  margin-top: 20px;
+}
+.logo-item {
+  img {
+
+
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column; // Dikey düzenleme
+  width: 100%; // Tam genişlik
+}
+
+.navbar-logo {
+  max-height: 100px;  // Adjust the height as needed
+  width: 100%;
+}
+
+
+//.featurette-image {
+//  margin-left: 1px;  // Resmin solundaki boşluğu sıfırlar
+//  margin-right: 20px; // Sağdaki boşluğu artırır
+//}
+//
+//.row.featurette {
+//  margin-left: 15px; // Satırın sol tarafında boşluk bırakır
+//  margin-right: 15px; // Satırın sağ tarafında boşluk bırakır
+//}
+//
+
+.featurette-image {
+  margin-left: auto;  // Sol boşluğu otomatik ayarlar
+  margin-right: auto; // Sağ boşluğu otomatik ayarlar
+  display: block;     // Resmi blok olarak ayarlar
+}
+
+.row.featurette {
+  margin-left: 0;     // Satırın solundaki boşluğu sıfırlar
+  margin-right: 0;    // Satırın sağındaki boşluğu sıfırlar
+}
+
+.position-relative {
+  background-size: cover;  // Arka planın kapsayıcıyı tamamen kaplamasını sağlar
+  background-position: center; // Resmi ortalar
+  background-repeat: no-repeat; // Resmin tekrar etmesini engeller
+  background-attachment: fixed; // Arka plan resmi sayfa kaydırılırken sabit kalır
+  position: relative; // Konumlandırma için
+  overflow: hidden; // İçeriğin taşmasını engeller
+}
+
+.position-relative .col-md-6 {
+  // İçerik için margin, padding veya diğer stil ayarları
+}
+
+.position-relative .product-device,
+.position-relative .product-device-2 {
+  // Ürün cihazları için stil ayarları
+}
+
+.background-div {
+  background-image: url("../assets/ArkaPlan2.png"); // Resim dosyanızın yolu
+  background-size: cover; // Resmin div'e sığması için
+  background-position: center; // Resmin ortalanması için
+  background-repeat: no-repeat; // Resmin tekrarlanmaması için
+  height: 100vh; // Div yüksekliği
+  width: 100%; // Div genişliği
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/ArkaPlan.png") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5; // İsteğe bağlı: Arka plan resminin saydamlığını ayarlamak için
+  }
+}
+
+.text-green {
+  color: green;
+}
+
+
+.btn-green {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none; /* Link alt çizgisini kaldırır */
+  display: inline-block; /* Blok olarak görüntüler */
+  transition: background-color 0.3s; /* Geçiş efekti ekler */
+
+  &:hover {
+    background-color: darkgreen; /* Hover durumda koyu yeşil yapar */
+  }
+}
+
+body {
+  font-family: 'Gotham', Helvetica, Arial, sans-serif;
+}
+
+//
+.gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 20px; // Yatayda 20px boşluk bırakır, yukarıdan ve aşağıdan boşluk bırakmaz
+
+  .image-container {
+    text-align: center;
+
+    img {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      align-items: center;
+      margin: 20px; // Her resme 20px boşluk bırakır
+    }
+
+    p {
+      color: #555;
+    }
+
+
+    h1.bune {
+      font-family: 'Gotham', Helvetica, Arial, sans-serif;
+      font-size: 24px; // Font boyutunu değiştirir
+      color: #002E5D; // Metin rengini değiştirir
+      margin-top: 10px; // Üstten boşluk ekler
+      margin-bottom: 10px; // Alttan boşluk ekler
+    }
+
+  }
+
+  // Arkaplan rengi
+  background-color: #f2ede1;
+}
+
+// Yukarıdaki ve aşağıdaki div'ler arasındaki boşluğu sıfırlamak için
+.background-div {
+  margin-bottom: 0;
+}
+
+
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+
+.image-container h1 {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.2em; // Smaller font size
+  color: #333;
+  margin: 10px 0;
+}
+
+.image-container p, .image-container ul {
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9em; // Smaller font size
+  color: #666;
+  text-align: center;
+}
+
+.image-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.image-container li {
+  margin-bottom: 5px;
+  font-size: 0.9em; // Smaller font size
+}
